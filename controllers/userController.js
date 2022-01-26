@@ -47,6 +47,9 @@ const userController = {
             }
 
             const { name, email,  password,orders } = req.body;
+            if(!name || !email || !password || !orders){
+                return next(CustomErrorHandler.userdate());
+            }
             // Hash password
              const hashedPassword = await bcrypt.hash(password, 10);
             let document;

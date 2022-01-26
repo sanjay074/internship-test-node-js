@@ -9,12 +9,12 @@ class CustomErrorHandler extends Error {
         return new CustomErrorHandler(409, message);
     }
 
-    static wrongCredentials(message = 'Username or password is wrong!') {
+    static wrongCredentials(message = 'email or password is wrong!') {
         return new CustomErrorHandler(401, message);
     }
 
-    static unAuthorized(message = 'unAuthorized') {
-        return new CustomErrorHandler(401, message);
+    static userdate(message = 'ALL field is required') {
+        return new CustomErrorHandler(422, message);
     }
 
     static notFound(message = '404 Not Found') {
